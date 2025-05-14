@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Premium Locations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f8fa;
+      color: #333;
+    }
+
+    .locations-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .locations-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #009688;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .location-card {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 0.6s ease;
+      position: relative;
+    }
+
+    .location-card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .location-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .location-content {
+      padding: 20px;
+    }
+
+    .location-icon {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .location-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .location-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #e91e63;
+    }
+
+    .location-content h3 {
+      margin: 10px 0 5px;
+      font-size: 1.4rem;
+      color: #444;
+    }
+
+    .location-content p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Go Back Button */
+    .go-back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      font-size: 36px;  /* Increase font size for the icon */
+      color: #009688;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .go-back-btn:hover {
+      color: #00796b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Go Back Button with Font Awesome -->
+  <button class="go-back-btn" onclick="window.location.href='index.html';"><i class="fas fa-arrow-left"></i></button>
+
+
+  <section class="locations-section">
+    <h2>Our Premium Locations</h2>
+    <div class="location-grid">
+      
+      <!-- Location 1 -->
+      <div class="location-card">
+        <div class="location-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M168 0C75.2 0 0 75.2 0 168c0 87.5 137.7 262.2 153.6 282.7a24 24 0 0 0 36.8 0C246.3 430.2 384 255.5 384 168 384 75.2 308.8 0 216 0zm0 240a72 72 0 1 1 0-144 72 72 0 0 1 0 144z"/></svg>
+        </div>
+        <img src="images/maldives.avif" alt="Maldives">
+        <div class="location-content">
+          <h3>Maldives</h3>
+          <p>Crystal-clear waters and luxurious villas surrounded by nature.</p>
+        </div>
+      </div>
+
+      <!-- Location 2 -->
+      <div class="location-card">
+        <div class="location-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M168 0C75.2 0 0 75.2 0 168c0 87.5 137.7 262.2 153.6 282.7a24 24 0 0 0 36.8 0C246.3 430.2 384 255.5 384 168 384 75.2 308.8 0 216 0zm0 240a72 72 0 1 1 0-144 72 72 0 0 1 0 144z"/></svg>
+        </div>
+        <img src="images/paris.webp" alt="Paris">
+        <div class="location-content">
+          <h3>Paris</h3>
+          <p>Experience timeless romance, world-class fashion, and iconic art.</p>
+        </div>
+      </div>
+
+      <!-- Location 3 -->
+      <div class="location-card">
+        <div class="location-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M168 0C75.2 0 0 75.2 0 168c0 87.5 137.7 262.2 153.6 282.7a24 24 0 0 0 36.8 0C246.3 430.2 384 255.5 384 168 384 75.2 308.8 0 216 0zm0 240a72 72 0 1 1 0-144 72 72 0 0 1 0 144z"/></svg>
+        </div>
+        <img src="images/tokyo.avif" alt="Tokyo">
+        <div class="location-content">
+          <h3>Tokyo</h3>
+          <p>Where innovation meets culture in a dynamic urban paradise.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Reveal animation using Intersection Observer
+    const cards = document.querySelectorAll('.location-card');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

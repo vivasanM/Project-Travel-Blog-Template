@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Travel Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f8fb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .services-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-image {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      transition: 0.4s ease;
+    }
+
+    .service-content {
+      padding: 25px;
+    }
+
+    .service-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+      color: #00796b;
+    }
+
+    .service-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .service-card:hover .service-image {
+      filter: brightness(85%);
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    /* Go Back Button */
+    .go-back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      font-size: 36px;  /* Increase font size for the icon */
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .go-back-btn:hover {
+      color: #009688;
+    }
+  </style>
+</head>
+<body>
+    <button class="go-back-btn" onclick="window.location.href='index.html';"><i class="fas fa-arrow-left"></i></button>
+
+
+
+
+  <header>
+    <h1>Exclusive Travel Services</h1>
+    <p style="margin-top: 10px; font-size: 1.1rem; color: #ddd;">
+      Explore the world with premium experiences and custom travel solutions.
+    </p>
+  </header>
+
+  <section class="services-section">
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-image" style="background-image: url(images/hotel.jpg);"></div>
+        <div class="service-content">
+          <h3>Luxury Hotel Booking</h3>
+          <p>Get access to 5-star hotels with special deals and early check-ins at top destinations.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image" style="background-image: url(images/jet.jpg);"></div>
+        <div class="service-content">
+          <h3>Private Jet Reservations</h3>
+          <p>Charter private jets and business-class flights for unparalleled travel comfort.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image" style="background-image: url(images/guide.jpg);"></div>
+        <div class="service-content">
+          <h3>Personal Travel Guide</h3>
+          <p>Hire multilingual guides to make your journey smooth, fun, and deeply insightful.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image" style="background-image: url(images/resort.jpg);"></div>
+        <div class="service-content">
+          <h3>Resort & Wellness</h3>
+          <p>Relax and rejuvenate with curated resort experiences and wellness packages.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image" style="background-image: url(images/boat.webp);"></div>
+        <div class="service-content">
+          <h3>Yacht Cruises</h3>
+          <p>Embark on a private yacht journey with personalized gourmet and entertainment onboard.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image" style="background-image: url(images/concer.avif);"></div>
+        <div class="service-content">
+          <h3>VIP Access & Events</h3>
+          <p>We handle exclusive bookings for concerts, shows, and international events.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Vivasan Travels | All Rights Reserved.
+  </footer>
+
+</body>
+</html>
+
+

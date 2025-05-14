@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Travel Blog Template</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Explore the World</h1>
+        <nav>
+            <ul>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="book.html"><i class="fas fa-book"></i> Book Now</a></li>
+                <li><a href="service.html"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="location.html"><i class="fas fa-map-marker-alt"></i> Location</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Discover Your Next Adventure</h2>
+        <button onclick="exploreNow()">Explore Now</button>
+    </section>
+
+    <section class="blog-posts" id="destinations">
+        <!-- Alps -->
+        <article>
+            <div class="image-container">
+                <img src="images/mountain.jpg" alt="Mountain" />
+            </div>
+            <h3>Exploring the Alps</h3>
+            <p>A breathtaking journey through snow-capped mountains and alpine villages.</p>
+            <div class="more-text" id="alps-text" style="display: none;">
+                <p>From skiing in the Swiss Alps to savoring chocolate in quaint villages, this trip is a dream for nature lovers and adventure seekers alike.</p>
+            </div>
+            <button onclick="toggleText('alps-text')">Read More</button>
+        </article>
+
+        <!-- Sunset -->
+        <article>
+            <div class="image-container">
+                <img src="images/sunset.jpg" alt="Sunset" />
+            </div>
+            <h3>Golden Sands of Sunset</h3>
+            <p>Golden sands, tranquil waters, and unforgettable evenings in paradise.</p>
+            <div class="more-text" id="sunset-text" style="display: none;">
+                <p>Relax under palm trees, enjoy fresh seafood by the shore, and dive into the vibrant culture and beauty of coastal escapes like Bali and the Maldives.</p>
+            </div>
+            <button onclick="toggleText('sunset-text')">Read More</button>
+        </article>
+
+        <!-- Tropical Island -->
+        <article>
+            <div class="image-container">
+                <img src="images/island.jpg" alt="Tropical Island" />
+            </div>
+            <h3>Tropical Island Escape</h3>
+            <p>Crystal-clear waters, coral reefs, and peaceful coconut groves.</p>
+            <div class="more-text" id="island-text" style="display: none;">
+                <p>Enjoy snorkeling, beach bonfires, and boat rides to hidden coves on this relaxing island retreat.</p>
+            </div>
+            <button onclick="toggleText('island-text')">Read More</button>
+        </article>
+
+        <!-- Hidden Waterfall -->
+        <article>
+            <div class="image-container">
+                <img src="images/waterfalls.jpg" alt="Hidden Waterfall" />
+            </div>
+            <h3>Chasing Hidden Waterfalls</h3>
+            <p>Adventures through dense jungles to reach nature’s hidden wonders.</p>
+            <div class="more-text" id="waterfall-text" style="display: none;">
+                <p>These off-the-grid destinations offer serenity, photography, and the sound of cascading water to soothe your soul.</p>
+            </div>
+            <button onclick="toggleText('waterfall-text')">Read More</button>
+        </article>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2>Travel Gallery</h2>
+        <div class="gallery-grid">
+            <img src="images/forest.jpg" alt="Forest" />
+            <img src="images/cultural.jpg" alt="Cultural" />
+            <img src="images/sea.jpg" alt="Sea" />
+            <img src="images/skyline.jpg" alt="Skyline" />
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form onsubmit="return submitForm()">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Travel Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleText(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+
+        function exploreNow() {
+            window.scrollTo({
+                top: document.getElementById("destinations").offsetTop,
+                behavior: "smooth"
+            });
+        }
+
+        function submitForm() {
+            alert("Your message has been sent!");
+            return false;
+        }
+    </script>
+</body>
+</html>
